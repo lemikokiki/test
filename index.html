@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+<body>
+
+
+    <a href="https://www.bidc.com.kh/" id="website"  hidden>website</a>
+    <a href="https://itunes.apple.com/kh/app/bidc-mobile-banking-cambodia/id1056453667" id="ios"  hidden>website</a>
+    <a href="https://play.google.com/store/apps/details?id=com.campopay.bidc&amp;hl=en" id="android"  hidden>website</a>
+
+
+    <script src="./jquery-1.11.1.min.js"></script>
+    <script>
+
+        window.onload = function () {
+
+            const userAgent = navigator.userAgent;
+            const regex = /(iPhone|iPad|iPod|Android|BlackBerry|Windows Phone|Windows NT)/;
+            const match = userAgent.match(regex);
+            const deviceName = match ? match[0] : "Unknown";
+
+            if (deviceName !== null) {
+                if (deviceName === 'iPhone') {
+                    var link = document.getElementById('ios');
+                    link.click();
+
+                    // console.log('iphone');
+                    // button.href = 'https://itunes.apple.com/kh/app/bidc-mobile-banking-cambodia/id1056453667';
+                } else if (deviceName === 'Android') {
+                    var link = document.getElementById('android');
+                    link.click();
+
+                    // console.log('Android');
+                    // button.href = 'https://play.google.com/store/apps/details?id=com.campopay.bidc&amp;hl=en';
+                } else {
+
+                    var link = document.getElementById('website');
+                    link.click();
+
+                    // console.log('other');
+                    // button.href = 'https://www.bidc.com.kh/';
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
